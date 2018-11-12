@@ -28,22 +28,26 @@ class EnumerablesTest < Minitest::Test
 
   def test_normalize_zip_codes
     #skip
+    require 'pry'
     numbers = [234, 10, 9119, 38881]
-    numbers.map do |x|
+    numbers.map! do |x|
       y = x.to_s
-      case y
-      when y.length == 1
-         y = "0000" + x
-      when y.length == 2
-         y = "000" + x
-       when y.length == 3
-         y = "00" + x
-       when y.length == 4
-         y = "0" + x
-      else
-puts y 
+if y.length == 1
+  z = "0000" + y
+elsif y.length == 2
+  z = "000" + y
+elsif y.length == 3
+  z = "00" + y
+elsif y.length == 4
+  z = "0" + y
+else z = y
 end
+#binding.pry
+#puts numbers
       end
+      puts numbers
+      actual = numbers 
+      #binding.pry
     assert_equal ["00234", "00010", "09119", "38881"], actual
   end
 
