@@ -10,20 +10,24 @@ class WizardTest < Minitest::Test
   end
 
   def test_can_have_different_name
-    skip
+    # skip
     wizard = Wizard.new("Alex")
     assert_equal "Alex", wizard.name
   end
 
   def test_is_bearded_by_default
-    skip
+    # skip
     wizard = Wizard.new("Ben")
     assert wizard.bearded?
   end
 
   def test_is_not_always_bearded
-    skip
+    require "pry"
+    # skip
     wizard = Wizard.new("Valerie", bearded: false)
+    binding.pry
+# assert wizard.bearded?
+# binding.pry
     refute wizard.bearded?
   end
 
@@ -61,4 +65,3 @@ class WizardTest < Minitest::Test
   end
 
 end
-
