@@ -25,7 +25,7 @@ class WizardTest < Minitest::Test
     require "pry"
     # skip
     wizard = Wizard.new("Valerie", bearded: false)
-    binding.pry
+    # binding.pry
 # assert wizard.bearded?
 # binding.pry
     refute wizard.bearded?

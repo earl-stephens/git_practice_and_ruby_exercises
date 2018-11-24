@@ -46,15 +46,17 @@ end
 #puts numbers
       end
       puts numbers
-      actual = numbers 
+      actual = numbers
       #binding.pry
     assert_equal ["00234", "00010", "09119", "38881"], actual
   end
 
   def test_no_waldo
-    skip
+    # skip
+    require 'pry'
     words = ["scarf", "sandcastle", "flag", "pretzel", "crow", "key"]
-    # Your Code Here
+    found = words.include?("waldo")
+binding.pry
     assert_nil found
   end
 
